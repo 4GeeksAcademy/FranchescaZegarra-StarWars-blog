@@ -1,7 +1,8 @@
 import React from "react";
 import "../../styles/home.css";
 import NavHeader from "../component/NavHeader.jsx";
-import InfoCard from "../component/InfoCard.jsx";
+import CharacterCard from "../component/CharacterCard.jsx";
+import PlanetCard from "../component/PlanetCard.jsx";
 import ScrollBox from "../component/ScrollBox.jsx";
 
 
@@ -13,15 +14,16 @@ export const Home = () => {
 			<NavHeader />
 			<h2>Characters</h2>
 			<ScrollBox>
-				<InfoCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
-				<InfoCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
-				<InfoCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
+				<CharacterCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
+				<CharacterCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
+				<CharacterCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
 			</ScrollBox>
 			<br />
 			<h2>Characters</h2>
 			<ScrollBox>
-				<InfoCard imgUrl="https://starwars-visualguide.com/assets/img/characters/1.jpg" imgAlt="img1" cardTitle="character1" cardDescription="Description" />
+				<PlanetCard imgUrl="https://starwars-visualguide.com/assets/img/planets/1.jpg" />
+				<PlanetCard imgUrl="https://starwars-visualguide.com/assets/img/planets/2.jpg" />
 			</ScrollBox>			
 		</div>
 	)
-	};
+};

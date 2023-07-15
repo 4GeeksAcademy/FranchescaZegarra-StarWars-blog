@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Home } from "./views/home";
+import { CharacterDetail } from "./views/characterDetails.jsx";
+import { PlanetDetails}  from "./views/planetDetails.jsx";
 
 //create your first component
 const Layout = () => {
@@ -14,6 +16,8 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/character-detail" element={<CharacterDetail />} />
+					<Route path="/planet-detail" element={<PlanetDetails />} />
 					<Route path="*" element={<h1>Not found!</h1>} />
 				</Routes>
 			</BrowserRouter>
