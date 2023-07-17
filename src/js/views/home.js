@@ -9,20 +9,31 @@ import { useSelector } from "react-redux";
 export const Home = () => {
 
 	const characters = useSelector(store => store.characters.value);
+	const planets = useSelector(store => store.planets.value);
+	console.log(planets);
 
 	return (
 		<div className="container">
 			<NavHeader />
 			<h2>Characters</h2>
 			<ScrollBox>
+				{ characters &&	characters.map((element,key) => { 
+					return(
+						<CharacterCard key={key} id={element.uid} />
+						)	
+					})
+				}
 				
-				<CharacterCard id="1" cardTitle="character1" cardDescription="Description" />
 			</ScrollBox>
 			<br />
 			<h2>Characters</h2>
 			<ScrollBox>
-				<PlanetCard imgUrl="https://starwars-visualguide.com/assets/img/planets/1.jpg" />
-				<PlanetCard imgUrl="https://starwars-visualguide.com/assets/img/planets/2.jpg" />
+				{ planets && planets.map((element,key) => {
+					return (
+						<PlanetCard key={key} id={element.uid} />
+						)
+					})
+				}
 			</ScrollBox>			
 		</div>
 	)

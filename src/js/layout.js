@@ -7,6 +7,7 @@ import { Home } from "./views/home";
 import { CharacterDetail } from "./views/characterDetails.jsx";
 import { PlanetDetails}  from "./views/planetDetails.jsx";
 import { seeCharacters } from "./store/Slice/charactersSlice.js";
+import { seePlanets } from "./store/Slice/planetSlice";
 
 //create your first component
 const Layout = () => {
@@ -17,9 +18,14 @@ const Layout = () => {
 	const dispatch = useDispatch();
 
 	useEffect(()=>{
-		fetch('https://www.swapi.tech/api/people')
+		fetch('https://www.swapi.tech/api/people?page=2&limit=10')
 		.then( response => {return response.json();})
 		.then( data => {dispatch(seeCharacters(data.results));})
+		.catch( error => console.log(error))
+
+		fetch('https://www.swapi.tech/api/planets?page=2&limit=10')
+		.then( response => {return response.json();})
+		.then( data => {dispatch(seePlanets(data.results));})
 		.catch( error => console.log(error))
 	},[])
 
@@ -28,7 +34,7 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/character-detail" element={<CharacterDetail />} />
+					<Route path="/character-detail/:uid" element={<CharacterDetail />} />
 					<Route path="/planet-detail" element={<PlanetDetails />} />
 					<Route path="*" element={<h1>Not found!</h1>} />
 				</Routes>

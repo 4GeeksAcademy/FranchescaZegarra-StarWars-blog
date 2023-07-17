@@ -1,9 +1,23 @@
 import React from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { seePlanetDetail } from "../store/Slice/planetDetailSlice";
 
-const PlanetCard =({imgUrl}) => {
+const PlanetCard =({id}) => {
+
+    const dispatch = useDispatch();
+    useEffect( () => {
+        fetch(`https://www.swapi.tech/api/planets/${id}`)
+        .then(response => { return response.json();})
+        .then(data => dispatch(seePlanetDetail(data.result)))
+        .catch(error => console.log(error));
+    }, [])
+
+    const planetDetail = useSelector( store => store.planetDetails.value );
+
     return (
         <div className="card">
-            <img src={imgUrl} className="card-img-top" alt="planet 1" />
+            <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} className="card-img-top" alt="planet 1" />
             <div className="card-body mx-0">
                 <h5 className="card-title">Alderaan</h5>
                 <p className="card-text m-0">Population: </p>
