@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { Home } from "./views/home";
 import { CharacterDetail } from "./views/characterDetails.jsx";
 import { PlanetDetails}  from "./views/planetDetails.jsx";
-import { seeCharacters } from "./store/Slice/CharactersSlide";
+import { seeCharacters } from "./store/Slice/charactersSlice.js";
 
 //create your first component
 const Layout = () => {
