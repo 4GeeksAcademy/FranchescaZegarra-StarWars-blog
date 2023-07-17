@@ -1,8 +1,10 @@
 import React from "react";
 import NavHeader from "../component/NavHeader.jsx";
 import GeneralDetail from "../component/GeneralDetail.jsx";
+//import { useSelector } from "react-redux";
 
 export const CharacterDetail = () => {
+
     return (
         <>
             <NavHeader />

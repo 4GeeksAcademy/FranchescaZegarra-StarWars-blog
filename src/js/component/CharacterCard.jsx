@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const CharacterCard = ({imgUrl, imgAlt, cardTitle, cardDescription}) => {
+const CharacterCard = ({imgUrl, imgAlt, cardTitle, cardDescription,id}) => {
+
+    //hacer use efecto con: https://www.swapi.tech/api/people/${id} para optener propiedades del personaje en sí
+
     return (
         <div className="card">
             <img src={imgUrl} className="card-img-top" alt={imgAlt} />
